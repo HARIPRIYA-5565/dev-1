@@ -41,19 +41,17 @@ menue: "Driver",
     menue: "Management",
 },
 ]
-
 export default function Sidebar(){
 return(
-<div className="py-8 w-[210px] border-r border-[#D3D3D3]">
-<ul className="space-y-6 font-semibold text-lg">
+<div className="py-8 w-[210px] border-r border-[#D3D3D3] h-screen">
+<ul className="font-semibold text-lg">
     {sidebarMenu.map((item)=>
-    <li className="border-b border-[#D3D3D3] py-1"> <button className="px-6">
+    <li className="border-b border-[#D3D3D3] h-12 hover:bg-[#D3D3D3]"> <button className="px-6">
         {item.menue}
     </button>
     </li>
     )}
 </ul>
 </div>
-
 )
 }
