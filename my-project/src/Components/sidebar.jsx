@@ -44,17 +44,15 @@ menue: "Driver",
 
 export default function Sidebar(){
 return(
-<div>
-<ul>
+<div className="py-8 w-[210px] border-r border-[#D3D3D3]">
+<ul className="space-y-6 font-semibold text-lg">
     {sidebarMenu.map((item)=>
-    <li> <button>
+    <li className="border-b border-[#D3D3D3] py-1"> <button className="px-6">
         {item.menue}
     </button>
-
     </li>
     )}
 </ul>
-
 </div>
 
 )
