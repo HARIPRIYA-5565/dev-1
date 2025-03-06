@@ -67,18 +67,36 @@ const driverList=[{
 },
 ]
 
-export default function driverDashboard(){
+export default function Driverdashboard(){
 return(
     <div>
-        {driverList.map((item)=>
-        <div>
-            <div>
-               <p>{item.name}</p> 
-               <p><span>ID No.</span>{item.idNo}</p>
-                </div>
-</div>
-       
-)}
-</div>
+    {driverList.map((item) => (
+      <div className="border-2 py-4 border-[#D3D3D3]">
+        <div className="flex flex-wrap justify-around space-x-4">
+          <div className="">
+            <p className="font-semibold">{item.name}</p>
+            <p><span>ID No.</span>{item.idNo}</p>
+          </div>
+          <div className="">
+            <p>{item.subscription}</p>
+            <p>{item.regDate}</p>
+          </div>
+          <div className="">
+            <p className="text-center">{item.totalRides}</p>
+            <p>{item.titleTR}</p>
+          </div>
+          <div className="">
+            <p className="text-center">{item.clientCancellations}</p>
+            <p>{item.titleCC}</p>
+          </div>
+          <div className="">
+            <p className="text-center">{item.driverCancellation}</p>
+            <p>{item.titleDC}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  
 )
 }

@@ -43,7 +43,7 @@ menue: "Driver",
 ]
 export default function Sidebar(){
 return(
-<div className="py-8 w-[210px] shadow-lg shadow-[#D3D3D3] h-screen">
+<div className="py-8 shadow-lg shadow-[#D3D3D3] h-screen">
 <ul className="font-semibold text-lg  text-gray-900">
     {sidebarMenu.map((item)=>
     <li className="shadow-sm shadow-[#D3D3D3] hover:shadow-md hover:text-[#6693F5]"><button className="py-4 hover:py-6 px-6">
