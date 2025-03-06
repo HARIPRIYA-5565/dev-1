@@ -71,6 +71,12 @@ export default function driverDashboard(){
 return(
     <div>
         {driverList.map((item)=>
+        <div>
+            <div>
+               <p>{item.name}</p> 
+               <p><span>ID No.</span>{item.idNo}</p>
+                </div>
+</div>
        
 )}
 </div>
