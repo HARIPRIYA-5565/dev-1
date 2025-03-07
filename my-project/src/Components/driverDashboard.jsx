@@ -70,6 +70,18 @@ const driverList=[{
 export default function Driverdashboard(){
 return(
     <div>
+<<<<<<< HEAD
+        {driverList.map((item)=>
+        <div>
+            <div>
+               <p>{item.name}</p> 
+               <p><span>ID No.</span>{item.idNo}</p>
+                </div>
+</div>
+       
+)}
+</div>
+=======
     {driverList.map((item) => (
       <div className="border-2 py-4 border-[#D3D3D3]">
         <div className="flex flex-wrap justify-around space-x-4">
@@ -98,5 +110,6 @@ return(
     ))}
   </div>
   
+>>>>>>> f014198a86ff55cca72b974d5b6ca65033c9729d
 )
 }
