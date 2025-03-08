@@ -69,47 +69,36 @@ const driverList=[{
 
 export default function Driverdashboard(){
 return(
-    <div>
-<<<<<<< HEAD
-        {driverList.map((item)=>
-        <div>
-            <div>
-               <p>{item.name}</p> 
-               <p><span>ID No.</span>{item.idNo}</p>
-                </div>
-</div>
-       
-)}
-</div>
-=======
+  <div className="px-6">
+    <div className="pt-6 flex justify-end "><button className="border border-gray-300 text-md py-2 px-6 bg-[#6693F5] text-white rounded-md hover:text-lg">Add</button></div>
+    <div className="space-y-8 mt-6">
     {driverList.map((item) => (
-      <div className="border-2 py-4 border-[#D3D3D3]">
+      <div className="shadow-md py-4 bg-white">
         <div className="flex flex-wrap justify-around space-x-4">
           <div className="">
-            <p className="font-semibold">{item.name}</p>
-            <p><span>ID No.</span>{item.idNo}</p>
+            <p className="font-semibold text-gray-800">{item.name}</p>
+            <p><span className="text-gray-400">ID No-</span><span className="text-gray-800">{item.idNo}</span></p>
           </div>
           <div className="">
-            <p>{item.subscription}</p>
-            <p>{item.regDate}</p>
+            <p className="text-center text-gray-800 font-medium">{item.subscription}</p>
+            <p><span className="text-gray-400">Registration Date-</span><span className="text-gray-800">{item.regDate}</span></p>
           </div>
           <div className="">
-            <p className="text-center">{item.totalRides}</p>
-            <p>{item.titleTR}</p>
+            <p className="text-center text-gray-800 font-medium">{item.totalRides}</p>
+            <p className="text-gray-400">{item.titleTR}</p>
+          </div> 
+          <div className="">
+            <p className="text-center text-gray-800 font-medium">{item.clientCancellations}</p>
+            <p className="text-gray-400">{item.titleCC}</p>
           </div>
           <div className="">
-            <p className="text-center">{item.clientCancellations}</p>
-            <p>{item.titleCC}</p>
-          </div>
-          <div className="">
-            <p className="text-center">{item.driverCancellation}</p>
-            <p>{item.titleDC}</p>
+            <p className="text-center text-gray-800 font-medium">{item.driverCancellation}</p>
+            <p className="text-gray-400">{item.titleDC}</p>
           </div>
         </div>
       </div>
     ))}
+  </div> 
   </div>
-  
->>>>>>> f014198a86ff55cca72b974d5b6ca65033c9729d
 )
 }
