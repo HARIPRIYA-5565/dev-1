@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import Sidebar from "./sidebar"// Import Sidebar component
+import HomePage from "./homePage"; // Import Home Dashboard component
+import Driverdashboard from "./driverDashboard" // Import Driver Dashboard component
+import DriverDetailDashboard from "./driverDetailDashboard"; // Import Driver Detail Dashboard component
 
-import Sidebar from "./sidebar";
-import Driverdashboard from "./driverDashboard"
+// Main App component
+const App = () => {
+  // State to track which dashboard to show
+  const [activePage, setActivePage] = useState('Home'); // Default to Home Dashboard
 
-export default function Main(){
-return(
+  // Function to handle sidebar item clicks
+  const handleSidebarClick = (page) => {
+    setActivePage(page); // Update activePage state based on sidebar item clicked
+  };
 
-   <div className="grid grid-cols-12"> 
-   <div className="col-span-2"> <Sidebar/></div>
- <div className="col-span-10 bg-gray-200"><Driverdashboard/></div>
+  // Conditionally render based on activePage state
+  const renderContent = () => {
+    switch (activePage) {
+      case 'Home':
+        return <HomePage />;
+      case 'Driver':
+        return <Driverdashboard />;
+      case 'Payouts':
+        return <DriverDetailDashboard />;
+      default:
+        return <HomePage />; // Default fallback to Home if no matching case
+    }
+  };
+
+  return (
+    <div className="flex">
+      <Sidebar onClick={handleSidebarClick} /> {/* Pass handleSidebarClick function to Sidebar */}
+      <div className="flex-1 p-6">
+        {renderContent()} {/* Render the selected dashboard */}
+      </div>
     </div>
-)
-}
+  );
+};
+
+export default App;
